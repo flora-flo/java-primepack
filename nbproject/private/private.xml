@@ -3,14 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/SinglePostController.java</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/PostAdd.fxml</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/NewFXMain.java</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/EditPostController.java</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/EditPost.fxml</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/singlePost.fxml</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/PostAddController.java</file>
-            <file>file:/C:/Users/21650/Desktop/Desktop_App/src/GUI/PostFrontController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/EstimationController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Entities/Post.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/NewFXMain.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/PostAddController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/EditPostController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Entities/Comment.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Services/ServiceComment.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/ShowCommentBackController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Services/ServicePost.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Interfaces/InterfaceComment.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/PostFrontController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/SinglePostController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/CarbonFlightController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Interfaces/InterfacePost.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/PostBackController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/CarbonMotorBikeController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/StatsController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/GUI/CarbonCarController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/desktop_app/Desktop_App.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/Desktop_App/src/Entities/Membre.java</file>
         </group>
     </open-files>
 </project-private>

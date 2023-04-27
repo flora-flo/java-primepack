@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CarbonMotorBikeController">
+    <children>
+      
+
+        <Label layoutX="23.0" layoutY="43.0" text="Distance: (The distance in KM)">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+        <TextField fx:id="distanceTextField" layoutX="23.0" layoutY="68.0" prefHeight="26.0" prefWidth="246.0" promptText="Distance" />
+        
+        <Label layoutX="23.0" layoutY="103.0" text="The type of motorbike:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+        <ComboBox fx:id="typeComboBox" layoutX="23.0" layoutY="126.0" prefHeight="26.0" prefWidth="246.0" promptText="Motorbike" />
+
+        <Button fx:id="calculateButton" layoutX="23.0" layoutY="169.0" mnemonicParsing="false" onAction="#calculateCarbonFootprint" text="Calculate" />
+        <Label fx:id="resultLabel" layoutX="23.0" layoutY="258.0" prefHeight="26.0" prefWidth="236.0" />
+        
+          <Button layoutX="331.0" layoutY="254.0" mnemonicParsing="false" text="Back" onAction="#back" />
+    </children>
+</AnchorPane>

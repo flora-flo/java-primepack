@@ -14,6 +14,9 @@ public class Post {
     private int id,nbr_Vue;
      private String theme,contenu,image;
     private Date date_Creation;
+    private Membre membre ;
+
+ 
 
     public Post(int id, String theme, String contenu, String image) {
         this.id = id;
@@ -104,6 +107,13 @@ public class Post {
     public void setNbr_Vue(int nbr_Vue) {
         this.nbr_Vue = nbr_Vue;
         
+    }
+       public Membre getMembre() {
+        return membre;
+    }
+
+    public void setMembre(Membre membre) {
+        this.membre = membre;
     }
     @Override
     public String toString() {

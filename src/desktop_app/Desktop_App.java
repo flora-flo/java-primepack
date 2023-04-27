@@ -25,26 +25,27 @@ public class Desktop_App{
        Date date = new Date();  
           
         
-        Post p = new Post("modernPost","llllllllllllllllllllmm","tryhhrrty",date);
+     //   Post p = new Post("modernPost","dev","llllllllllllllllllllmm","tryhhrrty",date);
         
       // MyConnection con = MyConnection.getInstance();
        
      ServicePost sp = new ServicePost();
-      // sp.addPost(p);
+    // System.out.println(sp.comments(56)); 
+       //sp.addPost(p);
    // sp.displayPosts();
-    // sp.deletePost(7);
+    // sp.deletePost(53);
 
-      Post p1 = new Post(6,"Desktop_App","CodingWithFx","tryhhrrty",date);
+     // Post p1 = new Post(52,"Desktop_App","JDBC","CodingWithFx","tryhhrrty",date);
      // sp.updatePost(p1);
     
-   
-       Comment c = new Comment(1,"randomComment",date);
-       Comment c1 = new Comment(12,"yyyy");
-     //ServiceComment sc = new ServiceComment();
-   //   sc.addComment(c);
-     //  sc.deleteComment(16);
-   // sc.updateComment(c1);
-     // sc.displayComments();
+    
+       //Comment c = new Comment(4,36,"randomComment",date);
+       Comment c1 = new Comment(108,"yyyy");
+//     ServiceComment sc = new ServiceComment();
+  //    sc.addComment(c);
+       //sc.deleteComment(112);
+  //  sc.updateComment(c1);
+      //sc.displayComments();
   
     }
     

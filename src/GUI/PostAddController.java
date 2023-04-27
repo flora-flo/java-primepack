@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Entities.Comment;
 import Entities.Post;
 import Services.ServicePost;
 import java.io.File;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import static java.time.temporal.TemporalQueries.localDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
@@ -46,7 +48,7 @@ public class PostAddController  {
      * Initializes the controller class.
      */
       Post post = new Post();
-    
+  
 
     @FXML
     private TextField themeField;
@@ -93,6 +95,7 @@ public class PostAddController  {
     
     @FXML
     public void savePost(javafx.event.ActionEvent event) throws IOException {
+        
         String content = contentArea.getText();
         String theme = themeField.getText();
         
@@ -101,9 +104,23 @@ public class PostAddController  {
         Date date = Date.from(instant);*/
         
 
-        if ( content.isEmpty() || theme.isEmpty() || imageFile==null ) {
+      
+        
+        if (theme.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Please enter content, theme and image");
+            alert.setContentText("Please enter theme");
+            alert.showAndWait();
+            return;
+        }
+        if (content.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please enter content");
+            alert.showAndWait();
+            return;
+        }
+        if (imageFile==null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please enter image");
             alert.showAndWait();
             return;
         }
@@ -114,7 +131,7 @@ public class PostAddController  {
             alert.showAndWait();
             return;
         }
-      //  Post post = new Post(theme, content);
+      //  Post post = new Post(theme,nom, content);
       
         if (imageFile != null) {
     try {
@@ -128,12 +145,14 @@ public class PostAddController  {
 }
 
         //  DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
-          Date now = new Date();  
+          Date now = new Date(); 
+         
           //String date= dtf.format(now);
           post.setDate_Creation(now);
           post.setTheme(theme);
-        
+      
           post.setContenu(content);
+      
         postService.addPost(post);
 
         
@@ -141,6 +160,7 @@ public class PostAddController  {
         alert.setContentText("Post saved successfully");
         alert.showAndWait();
 
+      
         themeField.clear();
         contentArea.clear();
        // datePicker.setValue(null);
@@ -157,13 +177,14 @@ public class PostAddController  {
 
     @FXML
     private void back(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
                     Parent root = loader.load();
                     Scene scene = new Scene(root);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setTitle("Show Post");
                     stage.setScene(scene);
-                    stage.show();
- 
+                    stage.show(); 
     }
+ 
+   
 }

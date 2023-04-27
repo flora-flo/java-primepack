@@ -35,6 +35,7 @@ public class EditPostController implements Initializable {
 
     @FXML
     private VBox postView;
+   
     @FXML
     private TextField themeField;
     @FXML
@@ -66,6 +67,7 @@ public class EditPostController implements Initializable {
 
     public void setSelectedPost(Post post) {
         this.selectedPost = post;
+         
         contentArea.setText(selectedPost.getContenu());
         themeField.setText(selectedPost.getTheme());
         imageTextField.setText(selectedPost.getImage());
@@ -76,7 +78,7 @@ public class EditPostController implements Initializable {
         
        
        
-                 
+                
                 String content = contentArea.getText();
                 String theme = themeField.getText();
         
@@ -85,7 +87,7 @@ public class EditPostController implements Initializable {
             alert.setContentText("Please enter content, theme ");
             alert.showAndWait();
             return;
-        }
+            }
         if( content.length()<20 ){
             
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -104,7 +106,7 @@ public class EditPostController implements Initializable {
         }
     }
                   selectedPost.setTheme(theme);
-                  
+               
                   selectedPost.setContenu(content);
                   
                   postService.updatePost(selectedPost);
@@ -140,14 +142,15 @@ public class EditPostController implements Initializable {
 
     @FXML
     private void back(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
+         
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
                     Parent root = loader.load();
                     Scene scene = new Scene(root);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setTitle("Show Post");
                     stage.setScene(scene);
-                    stage.show();
+                    stage.show(); 
     }
-
+    
     
 }

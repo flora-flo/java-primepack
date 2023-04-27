@@ -5,6 +5,8 @@
 package Services;
 
 import Entities.Comment;
+import Entities.Membre;
+import Entities.Post;
 
 import Interfaces.InterfaceComment;
 import Utils.MyConnection;
@@ -32,13 +34,13 @@ public class ServiceComment implements InterfaceComment{
     @Override
     public void addComment(Comment c) {
       try {
-            PreparedStatement stm = cnx.prepareStatement("insert into commentaire (actualite_id, text, date) values (?,?,?)");
+            PreparedStatement stm = cnx.prepareStatement("insert into commentaire (actualite_id, membre_id, text, date) values (?,?,?,?)");
             
           
-            stm.setInt(1, c.getIdPost());
-           // stm.setInt(2, c.getIdMembre());
-            stm.setString(2, c.getText());
-            stm.setDate(3,  new java.sql.Date(c.getDate().getTime()));
+            stm.setInt(1, c.getPost().getId());
+            stm.setInt(2, c.getMembre().getId());
+            stm.setString(3, c.getText());
+            stm.setDate(4,  new java.sql.Date(c.getDate().getTime()));
            
             stm.executeUpdate();
             
@@ -97,8 +99,12 @@ public class ServiceComment implements InterfaceComment{
             while (rs.next()) {
                 Comment c = new Comment();
                 c.setId(rs.getInt(1));
-                c.setIdPost(rs.getInt(2));
-                c.setIdMembre(rs.getInt(3));
+                Post post = new Post();
+                post.setId(rs.getInt(2));
+                c.setPost(post);
+                Membre membre = new Membre();
+                membre.setId(rs.getInt(3));
+                c.setMembre(membre);
                 c.setText(rs.getString("Text"));
             
                 c.setDate(rs.getDate("Date"));
@@ -113,5 +119,33 @@ public class ServiceComment implements InterfaceComment{
         return cmnts;
         
     }
+    
+     public List<Comment> searchByComment(String query) {
+    List<Comment> searchResults = new ArrayList<>();
+    try {
+        PreparedStatement ps = cnx.prepareStatement("SELECT * FROM commentaire WHERE LOWER(text) LIKE ?");
+        ps.setString(1, "%" + query.toLowerCase() + "%");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Comment c = new Comment();
+                c.setId(rs.getInt(1));
+                Post post = new Post();
+                post.setId(rs.getInt(2));
+                c.setPost(post);
+                Membre membre = new Membre();
+                membre.setId(rs.getInt(3));
+                c.setMembre(membre);
+                c.setText(rs.getString("Text"));
+            
+                c.setDate(rs.getDate("Date"));
+            searchResults.add(c);
+          //  System.out.println(searchResults);
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+    return searchResults;
+}
+
     
 }

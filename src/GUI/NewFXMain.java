@@ -29,18 +29,23 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) {
      
         try {
-              
-       //    FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowCommentBack.fxml"));  
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("postFront.fxml"));
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
-       //  FXMLLoader loader = new FXMLLoader(getClass().getResource("PostAdd.fxml"));
+             
+         //   FXMLLoader loader = new FXMLLoader(getClass().getResource("Estimation.fxml"));  
+        //    FXMLLoader loader = new FXMLLoader(getClass().getResource("CarbonMotorBike.fxml"));  
+          //  FXMLLoader loader = new FXMLLoader(getClass().getResource("CarbonFlight.fxml"));  
+        //  FXMLLoader loader = new FXMLLoader(getClass().getResource("CarbonCar.fxml"));  
+     //   FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowCommentBack.fxml"));  
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("postFront.fxml"));
+  // FXMLLoader loader = new FXMLLoader(getClass().getResource("PostBack.fxml"));
+         //FXMLLoader loader = new FXMLLoader(getClass().getResource("PostAdd.fxml"));
     //   loader.setRoot(new AnchorPane());
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
+         Parent root = loader.load();
+         Scene scene = new Scene(root);
          primaryStage.getIcons().add(new Image("/image/logo.png"));
          primaryStage.setTitle("Show Post");
          primaryStage.setScene(scene);
          primaryStage.show();
+       
            
         } catch (IOException ex) {
             System.err.println(ex.getMessage());

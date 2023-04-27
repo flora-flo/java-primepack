@@ -17,4 +17,5 @@ public interface InterfaceComment {
     public void deleteComment(int id);
     public void updateComment(Comment c);
     public List<Comment> displayComments();
+    
 }

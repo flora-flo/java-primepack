@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -13,22 +14,56 @@
 <AnchorPane id="AnchorPane" prefHeight="671.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SinglePostController">
     <children>
         <VBox layoutX="30.0" layoutY="30.0" prefHeight="566.0" prefWidth="541.0" spacing="10.0">
-            <Label fx:id="titleLabel" styleClass="title-label" text="Title of the post">
+             <Label fx:id="titleLabel" styleClass="title-label" text="Title of the post">
                 <font>
                     <Font size="34.0" />
                 </font>
             </Label>
-            <Label fx:id="dateLabel" styleClass="date-label" text="Date of the post" />
+            <Label fx:id="dateLabel" styleClass="date-label" text="Date of the post">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+            
+          
+           
 
             <HBox prefHeight="242.0" prefWidth="567.0" spacing="10.0">
                 <ImageView fx:id="imageView" fitHeight="289.0" fitWidth="465.0" />
             </HBox>
-
+            
             <Label fx:id="contentLabel" styleClass="content-label" text="Content of the post" wrapText="true">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Label>
+            <HBox>
+           <Button fx:id="likeButton" layoutX="25.0" layoutY="260.0" minHeight="50.0" minWidth="75.0" onAction="#rater" text="">
+            <graphic>
+                <FontAwesomeIconView fill="#4CAF50" glyphName="THUMBS_UP" size="2em" />
+            </graphic>
+        </Button>
+
+        <Button fx:id="dislikeButton" layoutX="110.0" layoutY="260.0" minHeight="50.0" minWidth="75.0" onAction="#rater" text="">
+            <graphic>
+                <FontAwesomeIconView fill="#F44336" glyphName="THUMBS_DOWN" size="2em" />
+            </graphic>
+        </Button>
+        </HBox>
+            <HBox spacing="10">
+                <Label fx:id="liker" text="Likes: ">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font></Label>
+            <Label fx:id="likeLabel" text="" />
+            <Label fx:id="disliker" text="Dislikes: ">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font></Label>
+            <Label fx:id="dislikeLabel" text="" />
+        </HBox>
+
+
+
             <Label fx:id="commentsLabel" text="Comments">
                 <font>
                     <Font size="24.0" />
@@ -47,10 +82,12 @@
                 </ScrollPane>
                
             </HBox>
-              <HBox prefHeight="0.0" prefWidth="567.0" spacing="400.0">
+            
+             <HBox prefHeight="0.0" prefWidth="567.0" spacing="400.0">
                   <Button fx:id="commentButton" onAction="#addComment" text="Comment" />
                  <Button fx:id="backButton" onAction="#back" text="Back" />
             </HBox>
         </VBox>
+         
     </children>
 </AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EstimationController">
+    <VBox alignment="CENTER" spacing="10">
+        <Text style="-fx-font-size: 24pt;" text="Carbon Emissions Estimation" />
+        
+         <VBox>
+                <TextArea prefHeight="204.0" prefWidth="500.0" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+        Welcome to our carbon estimation tool! 
+
+        Carbon emissions from transportation are a major contributor to climate change. However, it does not only have a negative impact on the environment, but also on animals and their habitats. By using this tool, you can estimate the carbon footprint of your car, motorcycle, or flight and make informed decisions about reducing your impact on the environment.
+
+        To get started, select your vehicle or flight from the dropdown menu and enter the distance travelled. Our tool will calculate the carbon emissions based on the type of vehicle and distance travelled.
+
+        Let's work together to reduce our carbon footprint and protect the planet!
+    </TextArea>
+            </VBox>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: white; -fx-padding: 10px;">
+           <Button fx:id="carButton" layoutX="25.0" layoutY="260.0" minHeight="50.0" minWidth="75.0" onAction="#redirectToCar">
+            <graphic>
+                <FontAwesomeIconView glyphName="CAR" size="2em" />
+            </graphic>
+        </Button>
+            <Button fx:id="motorButton" layoutX="25.0" layoutY="260.0" minHeight="50.0" minWidth="75.0" onAction="#redirectToMotor">
+            <graphic>
+                <FontAwesomeIconView glyphName="MOTORCYCLE" size="2em" />
+            </graphic>
+        </Button>
+             <Button fx:id="flight" layoutX="25.0" layoutY="260.0" minHeight="50.0" minWidth="75.0" onAction="#redirectToFlight">
+            <graphic>
+                <FontAwesomeIconView glyphName="PLANE" size="2em" />
+            </graphic>
+        </Button>
+            
+        </HBox>
+       
+    </VBox>
+   <Button layoutX="25.0" layoutY="342.0" mnemonicParsing="false" onAction="#back" text="Back" />
+</AnchorPane>
